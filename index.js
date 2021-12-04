@@ -6,12 +6,7 @@ const BlogRoutes = require("./routes/BlogRoutes");
 const port = 8000;
 const app = express();
 
-app.use(cors({
-    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
-}));
-app.use(cors({
-    origin: '*'
-}));
+app.use(cors());
 app.use('/blog', BlogRoutes);
 app.use('/', UserRoutes);
 
