@@ -10,7 +10,6 @@ module.exports = class UserCtl{
             
         }
         else{
-        console.log(data);
         data.userdata[0].Details = (JSON.parse(data.userdata[0].Details));
         data.userdata[0].Featured = (JSON.parse(data.userdata[0].Featured));
         res.send(data);

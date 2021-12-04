@@ -4,7 +4,7 @@ const BlogService = require('../services/BlogService');
 
 module.exports = class BlogCtl{
     static async apiGetAllBlogs(req, res){  
-        console.log("In blog route");
+        console.log("blog route");
         let userId = await new Promise((resolve, reject)=>{
             let sql = 'select Id from user where Name=' + mysql.escape(req.params.user);
             db.query(sql, (err, res)=>{
@@ -18,7 +18,6 @@ module.exports = class BlogCtl{
             console.log("user not found");
         }
         let blogs = await BlogService.getAllBlogs(userId[0].Id);
-        console.log(blogs);
         res.send(blogs);
     }
 }
