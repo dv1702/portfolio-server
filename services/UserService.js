@@ -16,9 +16,9 @@ module.exports = class User{
                  components.map((navlink)=>{
                      navlink.url = navlink.url + "/" + userName;
                  })
-                 res[0].Details = JSON.parse(res[0].Details);
-                 res[0].Featured = JSON.parse(res[0].Featured);
-                 console.log(res[0].Details);
+                 if(res.length === 0){
+                     resolve(-1);
+                 }
                  resolve({
                      navbar: components,
                      userdata : res,
